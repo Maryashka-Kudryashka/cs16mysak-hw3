@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package ua.edu.ucu.functions;
-
 /**
  *
  * @author Andrii_Rodionov
