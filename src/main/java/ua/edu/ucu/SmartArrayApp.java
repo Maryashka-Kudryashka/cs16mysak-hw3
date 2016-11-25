@@ -7,6 +7,7 @@ import ua.edu.ucu.functions.MyPredicate;
 import ua.edu.ucu.smartarr.*;
 
 public class SmartArrayApp {
+    static SmartArray arr;
 
     public static Integer[]
            filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
@@ -51,12 +52,18 @@ public class SmartArrayApp {
 
     public static String[]
             findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
-
-
-
-        // Hint: to convert Object[] to String[] - use the following code
-        //Object[] result = studentSmartArray.toArray();
-        //return Arrays.copyOf(result, result.length, String[].class);
-        return null;
+        String[] stud = new String [students.length];
+        int y = 0;
+        for (int i = 0; i < students.length; i++){
+            if (students[i].getGPA() >= 4.0 && students[i].getYear() == 2){
+                stud[y] = students[i].getSurname() + " " + students[i].getName();
+                y++;
+            }
+        }
+        arr = new BaseArray(Arrays.copyOfRange(stud, 0, y));
+        arr = new DistinctDecorator(arr);
+        String[] stringArray = Arrays.copyOf(arr.toArray(), arr.size(), String[].class);
+        Arrays.sort(stringArray);
+        return stringArray;
     }
 }

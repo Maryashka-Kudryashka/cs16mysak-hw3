@@ -1,6 +1,6 @@
 package ua.edu.ucu;
 
-
+import java.util.Comparator;
 class Student {
 
     private double GPA;
@@ -31,7 +31,9 @@ class Student {
         return surname;
     }
 
-    @Override
+
+
+        @Override
     public String toString() {
         return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
